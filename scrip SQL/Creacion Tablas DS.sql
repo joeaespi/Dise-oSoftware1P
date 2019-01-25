@@ -81,7 +81,8 @@ FOREIGN KEY(idComprador) references comprador(idComprador)
 drop table if exists formaPago;
 create table formaPago(
 idFormaPago int(5),
-formaPago varchar(50)
+formaPago varchar(50),
+primary key(idFormaPago)
 );
 
 drop table if exists venta;
