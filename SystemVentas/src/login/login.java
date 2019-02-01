@@ -50,9 +50,9 @@ public class login extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        btnlogin = new javax.swing.JButton();
+        campoUsuario = new javax.swing.JTextField();
+        campoContrasenia = new javax.swing.JTextField();
+        btnSalir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtregistro = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -81,7 +81,6 @@ public class login extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addContainerGap(97, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(25, 25, 25))))
         );
@@ -159,22 +158,22 @@ public class login extends javax.swing.JFrame {
 
         jLabel2.setText("LOGIN");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 190, 27));
+        jPanel3.add(campoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 190, 27));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        campoContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                campoContraseniaActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 188, 191, 30));
+        jPanel3.add(campoContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 188, 191, 30));
 
-        btnlogin.setText("Ingresar");
-        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Ingresar");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnloginActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jPanel3.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+        jPanel3.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("X");
@@ -234,17 +233,17 @@ public class login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnloginActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void campoContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoContraseniaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_campoContraseniaActionPerformed
 
     private void txtregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtregistroMouseClicked
         // TODO add your handling code here:
@@ -289,7 +288,9 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnlogin;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JTextField campoContrasenia;
+    private javax.swing.JTextField campoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -302,8 +303,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel txtregistro;
     // End of variables declaration//GEN-END:variables
 
