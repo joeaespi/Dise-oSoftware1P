@@ -1,3 +1,4 @@
+drop database proyectoDS;
 create database proyectoDS;
 use proyectoDS;
 
@@ -57,6 +58,7 @@ drop table if exists producto;
 create table producto(
 nombre varchar(50),
 categoria varchar(50),
+descripcion varchar(500),
 precio float(5),
 tiempoMaximoEntrega float(2),
 calificacionPromedio float(4),
@@ -69,7 +71,7 @@ drop table if exists pedido;
 create table pedido(
 estado varchar(10),
 costoTotal float(5),
-FechaPedido date,
+FechaPedido DATETIME,
 idComprador int(5),
 idVendedor int(5),
 idPedido int(4),
@@ -91,7 +93,7 @@ idVenta int(5),
 idFormaPago int(5),
 idPedido int(4),
 calificacionVenta int(4),
-fechaRecibido date,
+fechaRecibido DATETIME,
 primary key (idVenta),
 FOREIGN KEY(idFormaPago) references formaPago(idFormaPago),
 FOREIGN KEY(idPedido) references pedido(idPedido)

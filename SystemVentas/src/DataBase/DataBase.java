@@ -17,12 +17,14 @@ import javax.swing.JOptionPane;
 public class DataBase {
     public static Connection getConnection() {
         Connection con = null;
-        //192.168.1.12
-        String url = "jdbc:mysql://127.0.0.1:3306/proyectods";
+        //192.168.1.12  
+       // String url = "jdbc:mysql://localhost:3306/proyectods";
+        String url = "jdbc:mysql://192.168.1.12:3306/proyectods";
         String user = "root";
         String pass = "jaed";
         try {
             //Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Antes de conetar");
             con = DriverManager.getConnection(url, user, pass);
             System.out.println("conectado");
             return con;
