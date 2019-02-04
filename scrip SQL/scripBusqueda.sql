@@ -13,3 +13,12 @@ UPDATE venta set porcentajeVenta =  (select count(idVenta) from Venta inner join
 END;
 |
 DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE nombres
+(IN con CHAR(50), out salida int(5))
+BEGIN
+  SELECT idProducto FROM producto
+  WHERE nombre = con;
+END //
+DELIMITER ;

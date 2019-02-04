@@ -5,6 +5,11 @@
  */
 package view;
 
+import java.sql.ResultSet;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import modelo.DataBase.CargasDB;
+
 /**
  *
  * @author asus
@@ -16,6 +21,31 @@ public class panelTienda extends javax.swing.JPanel {
      */
     public panelTienda() {
         initComponents();
+    }
+
+    private void mostrar(String consulta, JTable tabla) {
+        DefaultTableModel modelo = new DefaultTableModel();
+        ResultSet rs = CargasDB.getTabla(consulta);
+
+        modelo.setColumnIdentifiers(new Object[]{"nombre", "precio"});
+        try {
+            while (rs.next()) {
+                // añade los resultado a al modelo de tabla
+                modelo.addRow(new Object[]{rs.getString("nombre"), rs.getString("categoria"),
+                    rs.getFloat("precio"), rs.getFloat("tiempoMaximoEntrega"),
+                    rs.getFloat("calificacionPromedio"), rs.getFloat("porcentajeBusqueda")});
+            }
+            // asigna el modelo a la tabla
+            tabla.setModel(modelo);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void consultas() {
+        String consulta="select * from producto where nombre like'%"+txtbusqueda.getText()+"%'";
+        mostrar(consulta, tabla);
+
     }
 
     /**
@@ -30,9 +60,9 @@ public class panelTienda extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtbusqueda = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,7 +76,7 @@ public class panelTienda extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -57,7 +87,7 @@ public class panelTienda extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -74,6 +104,11 @@ public class panelTienda extends javax.swing.JPanel {
         );
 
         jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -81,7 +116,7 @@ public class panelTienda extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(99, 99, 99)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton1)
                 .addContainerGap(47, Short.MAX_VALUE))
@@ -91,7 +126,7 @@ public class panelTienda extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addContainerGap())
         );
@@ -220,6 +255,12 @@ public class panelTienda extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        consultas();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -235,10 +276,10 @@ public class panelTienda extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTable tabla;
+    private javax.swing.JTextField txtbusqueda;
     // End of variables declaration//GEN-END:variables
 }

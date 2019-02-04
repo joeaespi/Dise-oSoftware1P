@@ -6,6 +6,7 @@
 package controlador;
 
 import java.awt.Component;
+import java.sql.Connection;
 import javax.swing.JTextField;
 import login.signUp;
 import modelo.Usuario;
@@ -17,6 +18,7 @@ import modelo.Usuario;
 public class Main {
     Validaciones v;
     signUp registro;
+    Connection cn;
 
     private void presentarInterfaz() {
         
@@ -43,6 +45,6 @@ public class Main {
             }
         }
     }
-    privatevoi
+   
 
 }

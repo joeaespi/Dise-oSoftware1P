@@ -17,8 +17,8 @@ public class signUp extends javax.swing.JFrame {
     /**
      * Creates new form signUp
      */
+    
     Usuario user;
-
     public signUp() {
         initComponents();
         crearRadioButtom();
@@ -301,7 +301,7 @@ public class signUp extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        nuevoUsario();
+        //nuevoUsario();
         
         
 
@@ -408,8 +408,10 @@ public class signUp extends javax.swing.JFrame {
         String email = campoEmail.getText();
         String user = campoUsuario.getText();
         String contrasena = campoContrasena.getText();
-        boolean esVendedor=ObtenerResultado();
-        user= new Usuario( user, contrasena,nombre,apellido,ws, email, direccion, ci, matricula,esVendedor, 200);
+        boolean rol= ObtenerResultado();
+        
+        user= new Usuario(user,contrasena,apellido,ws,email,direccion,ci,matricula,rol);
+        //user= new Usuario( user, contrasena,nombre,apellido,ws, email, direccion, ci, matricula,esVendedor, 200);
         
     
     }
