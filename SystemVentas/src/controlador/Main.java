@@ -8,13 +8,13 @@ package controlador;
 import java.awt.Component;
 import javax.swing.JTextField;
 import login.signUp;
+import modelo.Usuario;
 
 /**
  *
  * @author asus
  */
 public class Main {
-
     Validaciones v;
     signUp registro;
 
@@ -22,8 +22,8 @@ public class Main {
         
     }
 
-    private void guardarNuevoUsuario() {
-
+    private void guardarNuevoUsuario(Usuario user) {
+        
     }
 
     private void validarTexto() {
@@ -36,12 +36,13 @@ public class Main {
                 /*casteo*/
                 //tf.setEnabled(true);
                 if(v.emptyField(tf.getText())){
-                   guardarNuevoUsuario();
+                   //guardarNuevoUsuario();
                 }
                 
                 /*habilito el control*/
             }
         }
     }
+    privatevoi
 
 }

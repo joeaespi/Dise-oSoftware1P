@@ -5,10 +5,22 @@
  */
 package modelo;
 
+import java.sql.Date;
+import java.util.LinkedList;
+
 /**
  *
  * @author asus
  */
 public class Pedido {
-    
+    LinkedList<Producto> productos;
+    Vendedor vendedor;
+    Date fechaPedido;
+    double costoTotal;
+    void cancelar(){
+        
+    }
+    void finalizarCompra(){
+        
+    }
 }

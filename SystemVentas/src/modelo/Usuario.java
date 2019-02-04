@@ -11,7 +11,7 @@ package modelo;
  */
 public class Usuario {
     String Usuario;
-    String contrasenia,apellido;
+    String contrasenia,nombre,apellido;
     boolean tieneWhatsapp;
     String email;
     String direccion;
@@ -20,9 +20,10 @@ public class Usuario {
     boolean esVendedor; 
     double saldo;
 
-    public Usuario(String Usuario, String contrasenia, String apellido, boolean tieneWhatsapp, String email, String direccion, String cedula, int matricula, boolean esVendedor, double saldo) {
+    public Usuario(String Usuario, String contrasenia, String nombre, String apellido, boolean tieneWhatsapp, String email, String direccion, String cedula, int matricula, boolean esVendedor, double saldo) {
         this.Usuario = Usuario;
         this.contrasenia = contrasenia;
+        this.nombre = nombre;
         this.apellido = apellido;
         this.tieneWhatsapp = tieneWhatsapp;
         this.email = email;
@@ -47,6 +48,14 @@ public class Usuario {
 
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -112,7 +121,8 @@ public class Usuario {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
+
+   
     
     
     

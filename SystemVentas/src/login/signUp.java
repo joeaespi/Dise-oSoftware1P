@@ -5,6 +5,9 @@
  */
 package login;
 
+import javax.swing.ButtonGroup;
+import modelo.Usuario;
+
 /**
  *
  * @author asus
@@ -14,10 +17,14 @@ public class signUp extends javax.swing.JFrame {
     /**
      * Creates new form signUp
      */
+    Usuario user;
+
     public signUp() {
         initComponents();
+        crearRadioButtom();
+        ObtenerResultado();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,16 +50,16 @@ public class signUp extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbcomprador = new javax.swing.JRadioButton();
+        rbvendedor = new javax.swing.JRadioButton();
         campoNombre = new javax.swing.JTextField();
         campoCedula = new javax.swing.JTextField();
         campoTelefono = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        campoDireccion = new javax.swing.JTextField();
+        campoUsuario = new javax.swing.JTextField();
         campoApellido = new javax.swing.JTextField();
         campoTieneWhatsapp = new javax.swing.JRadioButton();
-        jTextField10 = new javax.swing.JTextField();
+        campoContrasena = new javax.swing.JTextField();
         campoEmail = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
@@ -84,25 +91,36 @@ public class signUp extends javax.swing.JFrame {
 
         jLabel10.setText("Contraseña");
 
-        jRadioButton1.setText("Comprador");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        rbcomprador.setText("Comprador");
+        rbcomprador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                rbcompradorActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("Vendedor");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        rbvendedor.setText("Vendedor");
+        rbvendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                rbvendedorActionPerformed(evt);
             }
         });
 
         campoTieneWhatsapp.setText("WhatsApp");
 
+        campoContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoContrasenaActionPerformed(evt);
+            }
+        });
+
         btnCancelar.setText("Cancelar");
 
         btnRegistrar.setText("Registrarse");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Matricula");
 
@@ -121,14 +139,14 @@ public class signUp extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpregistroLayout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(rbcomprador)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2))
+                                .addComponent(rbvendedor))
                             .addGroup(jpregistroLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(campoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
             .addGroup(jpregistroLayout.createSequentialGroup()
@@ -159,7 +177,7 @@ public class signUp extends javax.swing.JFrame {
                                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(campoApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                                     .addComponent(campoCedula, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                    .addComponent(campoDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                                     .addComponent(campoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                                     .addComponent(campoTelefono)
                                     .addComponent(campoMatricula, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -199,7 +217,7 @@ public class signUp extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -209,20 +227,20 @@ public class signUp extends javax.swing.JFrame {
                     .addGroup(jpregistroLayout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jRadioButton2))
-                        .addGap(2, 2, 2))
+                        .addComponent(jLabel8)
+                        .addGap(7, 7, 7))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpregistroLayout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbcomprador)
+                            .addComponent(rbvendedor))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jpregistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
@@ -273,13 +291,26 @@ public class signUp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void rbvendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbvendedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_rbvendedorActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void rbcompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbcompradorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_rbcompradorActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+        nuevoUsario();
+        
+        
+
+
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void campoContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoContrasenaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,11 +352,14 @@ public class signUp extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JTextField campoApellido;
     private javax.swing.JTextField campoCedula;
+    private javax.swing.JTextField campoContrasena;
+    private javax.swing.JTextField campoDireccion;
     private javax.swing.JTextField campoEmail;
     private javax.swing.JTextField campoMatricula;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoTelefono;
     private javax.swing.JRadioButton campoTieneWhatsapp;
+    private javax.swing.JTextField campoUsuario;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -339,15 +373,44 @@ public class signUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     public javax.swing.JPanel jpregistro;
+    private javax.swing.JRadioButton rbcomprador;
+    private javax.swing.JRadioButton rbvendedor;
     // End of variables declaration//GEN-END:variables
-}
 
+    private void crearRadioButtom() {
+        String respuesta;
+        ButtonGroup grupo1 = new ButtonGroup();
+        grupo1.add(rbcomprador);
+        grupo1.add(rbvendedor);
+   
+    }
+    private boolean ObtenerResultado(){
+        if (rbcomprador.isSelected() == true) {
+             return true;
+             
+        }else{
+           return false;
+        }
+    }
+
+    private Usuario nuevoUsario() {
+        String nombre = campoNombre.getText();
+        String ape1lido = campoApellido.getText();
+        int ci = Integer.parseInt(campoCedula.getText());
+        int telefono = Integer.parseInt(campoTelefono.getText());
+        boolean ws=campoTieneWhatsapp.isSelected();
+        int matricula = Integer.parseInt(campoMatricula.getText());
+        String direccion = campoDireccion.getText();
+        String email = campoEmail.getText();
+        String user = campoUsuario.getText();
+        String contrasena = campoContrasena.getText();
+        boolean esVendedor=ObtenerResultado();
+        user= new Usuario( user, contrasena,nombre,apellido,ws, email, direccion, ci, matricula,esVendedor, 200);
+        
+    
+    }
+}
