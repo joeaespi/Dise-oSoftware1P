@@ -11,7 +11,8 @@ package modelo;
  */
 public class Usuario {
     String Usuario;
-    String contrasenia,nombre,apellido;
+    String contrasenia,nombre;
+    String apellido;
     boolean tieneWhatsapp;
     String email;
     String direccion;

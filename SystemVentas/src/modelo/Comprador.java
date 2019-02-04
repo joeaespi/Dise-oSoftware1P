@@ -17,10 +17,11 @@ public class Comprador extends Usuario {
     LinkedList<Producto>productosDisponibles;
     double saldoDisponible;
 
-    public Comprador(String Usuario, String contrasenia, String apellido, boolean tieneWhatsapp, String email, String direccion, String cedula, int matricula, boolean esVendedor, double saldo) {
-        super(Usuario, contrasenia, apellido, tieneWhatsapp, email, direccion, cedula, matricula, esVendedor, saldo);
-        this.saldoDisponible= 500;
+    public Comprador(String Usuario, String contrasenia, String nombre, String apellido, boolean tieneWhatsapp, String email, String direccion, String cedula, int matricula, boolean esVendedor, double saldo) {
+        super(Usuario, contrasenia, nombre, apellido, tieneWhatsapp, email, direccion, cedula, matricula, esVendedor, saldo);
     }
+
+    
 
     public double getSaldoDisponible() {
         return saldoDisponible;

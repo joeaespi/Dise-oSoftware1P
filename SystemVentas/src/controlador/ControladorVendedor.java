@@ -19,5 +19,8 @@ public class ControladorVendedor {
     private void generarPdf(){
         
     }
+    private void agregarProductos(){
+        
+    }
          
 }

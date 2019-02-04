@@ -3,13 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/modelo/Comprador.java</file>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/observer/Notificacion.java</file>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/observer/Subject.java</file>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/modelo/Vendedor.java</file>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/observer/NotificacionVendedor.java</file>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/observer/Notificar.java</file>
-            <file>file:/C:/Users/EVOTEC/Desktop/Nueva%20carpeta/proyecto/DisenioSoftware1P/SystemVentas/src/observer/NotificacionComprador.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/view/panelTienda.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/Venta.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/login/login.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/Usuario.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/DataBase/ConexionDB.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/controlador/ControladorVendedor.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/DataBase/CargasDB.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/controlador/ControladorAdministrador.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/login/signUp.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/Pedido.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/controlador/Consultas.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/Comprador.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/view/Comprador.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/Vendedor.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/controlador/Main.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/controlador/Validaciones.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/modelo/Producto.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/DisenioSoftware1P/SystemVentas/src/view/Vendedor.java</file>
         </group>
     </open-files>
 </project-private>
