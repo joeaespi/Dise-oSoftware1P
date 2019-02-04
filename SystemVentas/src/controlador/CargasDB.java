@@ -5,15 +5,19 @@
  */
 package controlador;
 
+import DataBase.DataBase;
+
 /**
  *
  * @author asus
  */
-public class Consultas {
-    public void nuevosProductos(){
+public class CargasDB {
+
+    public void conectar() {
+        DataBase c = DataBase.getConexion();
+        c.conectar();
+        c.desconectar();
         
     }
-    public void masPopulares(){
-        
-    }
+
 }
