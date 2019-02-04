@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controlador;
+
+import java.awt.Component;
+import javax.swing.JTextField;
+import login.signUp;
+
+/**
+ *
+ * @author asus
+ */
+public class Main {
+
+    Validaciones v;
+    signUp registro;
+
+    private void presentarInterfaz() {
+        
+    }
+
+    private void guardarNuevoUsuario() {
+
+    }
+
+    private void validarTexto() {
+
+        Component[] c = registro.jpregistro.getComponents();/*obtengo los componentes*/
+        for (int i = 0; i < c.length; i++) {
+            if (c[i] instanceof JTextField) {
+                /*si es un textfield*/
+                JTextField tf = (JTextField) c[i];
+                /*casteo*/
+                //tf.setEnabled(true);
+                if(v.emptyField(tf.getText())){
+                   guardarNuevoUsuario();
+                }
+                
+                /*habilito el control*/
+            }
+        }
+    }
+
+}
