@@ -1,4 +1,4 @@
-drop database proyectoDS;
+DROP DATABASE IF EXISTS proyectods;
 create database proyectoDS;
 use proyectoDS;
 

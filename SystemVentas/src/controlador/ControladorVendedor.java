@@ -3,24 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
-
-import java.sql.Date;
-import java.util.LinkedList;
+package controlador;
 
 /**
  *
  * @author asus
  */
-public class Pedido {
-    LinkedList<Producto> productos;
-    Vendedor vendedor;
-    Date fechaPedido;
-    double costoTotal;
-    void cancelar(){
+public class ControladorVendedor {
+    private void misVentas(){
         
     }
-    void finalizarCompra(){
+    private void misProductos(){
         
     }
+    private void generarPdf(){
+        
+    }
+         
 }

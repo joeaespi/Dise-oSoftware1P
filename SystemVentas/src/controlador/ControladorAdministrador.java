@@ -13,7 +13,7 @@ import modelo.Venta;
  *
  * @author asus
  */
-public class Ingresar {
+public class ControladorAdministrador {
 
     //ver diagrama
     public void ingresarProducto(Producto p) {

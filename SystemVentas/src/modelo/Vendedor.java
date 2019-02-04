@@ -9,6 +9,10 @@ package modelo;
  *
  * @author asus
  */
-public class Vendedor {
+public class Vendedor extends Usuario {
+    
+    public Vendedor(String Usuario, String contrasenia, String apellido, boolean tieneWhatsapp, String email, String direccion, String cedula, int matricula, boolean esVendedor, double saldo) {
+        super(Usuario, contrasenia, apellido, tieneWhatsapp, email, direccion, cedula, matricula, esVendedor, saldo);
+    }
     
 }

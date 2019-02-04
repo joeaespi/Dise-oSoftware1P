@@ -5,13 +5,13 @@
  */
 package observer;
 
+import modelo.Comprador;
+import modelo.Producto;
+
 /**
  *
- * @author asus
+ * @author EVOTEC
  */
-public interface Subject {
-    //public void update();
-    public void attach(Notificar notificar);
-    public void dettach(Notificar notificar);  
-    public void notificar( );
+public interface Notificacion {
+    public void update();
 }

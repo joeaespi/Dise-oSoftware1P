@@ -5,10 +5,34 @@
  */
 package modelo;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author asus
  */
-public class Comprador {
+public class Comprador extends Usuario {
+    LinkedList<Pedido>pedidosPorRecibir;
+    LinkedList<Venta>ventasRecibidas; //compras
+    LinkedList<Producto>productosDisponibles;
+    double saldoDisponible;
+
+    public Comprador(String Usuario, String contrasenia, String apellido, boolean tieneWhatsapp, String email, String direccion, String cedula, int matricula, boolean esVendedor, double saldo) {
+        super(Usuario, contrasenia, apellido, tieneWhatsapp, email, direccion, cedula, matricula, esVendedor, saldo);
+        this.saldoDisponible= 500;
+    }
+
+    public double getSaldoDisponible() {
+        return saldoDisponible;
+    }
+
+    public void setSaldoDisponible(double saldoDisponible) {
+        this.saldoDisponible = saldoDisponible;
+    }
+    public LinkedList<Pedido> buscaPedidoPendiente(String nombre){
+        return pedidosPorRecibir= new LinkedList<>();
+    }
+    
+   
     
 }
